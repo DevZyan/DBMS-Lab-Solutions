@@ -1,5 +1,10 @@
 # **DBMS-Lab-Solutions**
 
+![Python](https://img.shields.io/badge/language-Python-blue)
+![PostgreSQL](https://img.shields.io/badge/language-PostgreSQL-blue)
+![Course](https://img.shields.io/badge/course-DBMS%20Lab-orange)
+![Status](https://img.shields.io/badge/status-OnGoing-yellow)
+
 **Course:** Database Management Systems Lab  
 **Semester:** Spring 2026  
 **College:** IIT Kharagpur  
