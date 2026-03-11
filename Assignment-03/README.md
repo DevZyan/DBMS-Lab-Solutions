@@ -10,7 +10,7 @@ This project implements a Relational Database Management System (RDBMS) for a Le
 
 ## Problem Statement
 
-The objective was to design a database capable of managing students, instructors, courses, enrollments, and reviews while enforcing specific data validity rules. The system must support analytical queries to identify trends such as high-spending students, course completion rates, and review consistency.
+Design a database capable of managing students, instructors, courses, enrollments, and reviews while enforcing specific data validity rules. The system must support analytical queries to identify trends such as high-spending students, course completion rates, and review consistency.
 
 ## Database Schema
 
@@ -27,7 +27,7 @@ erDiagram
     Instructors {
         bigint instructor_id PK
         varchar name
-        varchar main_area_of_research
+        varchar research_area
     }
     Courses {
         char course_id PK
@@ -51,7 +51,7 @@ erDiagram
     }
 
     Students ||--o{ Enrollments : "enrolls in"
-    Students ||--o{ Reviews : "writes"``
+    Students ||--o{ Reviews : "writes"
     Instructors ||--o{ Courses : "teaches"
     Courses ||--o{ Enrollments : "contains"
     Courses ||--o{ Reviews : "receives"
@@ -69,30 +69,26 @@ erDiagram
 
 ## Integrity Constraints
 
-The schema enforces data validity at the database level using PostgreSQL constraints:
-
 | Constraint Type | Field | Rule |
 | :--- | :--- | :--- |
-| **Check** | `student_id`, `instructor_id`, `enrollment_id`, `review_id` | Must be 10-digit integers (1000000000 - 9999999999) |
-| **Check** | `course_id` | Alphanumeric: 2 uppercase letters followed by 4 digits (Regex: `^[A-Z]{2}[0-9]{4}$`) |
-| **Check** | `rating` | Integer value between 1 and 5 |
-| **Check** | `price` | Non-negative decimal value |
-| **Unique** | `email` | Ensures no duplicate student email addresses |
-| **Referential** | All Foreign Keys | `ON DELETE CASCADE` enabled to maintain consistency |
+| **Check** | `student_id`, `instructor_id`, `enrollment_id`, `review_id` | 10-digit integers (1000000000 - 9999999999) |
+| **Check** | `course_id` | Alphanumeric: 2 uppercase letters + 4 digits (Regex: `^[A-Z]{2}[0-9]{4}$`) |
+| **Check** | `rating` | Integer between 1 and 5 |
+| **Check** | `price` | Non-negative decimal |
+| **Unique** | `email` | No duplicate student emails |
+| **Referential** | All Foreign Keys | `ON DELETE CASCADE` |
 
 ## Queries Implemented
 
-The solution includes seven analytical queries defined in `solution.sql`:
-
-| # | Query Objective | SQL Techniques |
+| # | Query | Technique |
 | :--- | :--- | :--- |
-| 1 | Courses with average rating higher than overall average | Subquery, Aggregation (`AVG`) |
-| 2 | Students who spent more than the average student | JOIN, Nested Subquery, `GROUP BY` |
-| 3 | Instructors whose every course has at least one review | `LEFT JOIN`, `HAVING` clause |
+| 1 | Courses with average rating higher than overall average | Subquery, Aggregation |
+| 2 | Students who spent more than the average student | JOIN, Nested Subquery |
+| 3 | Instructors whose every course has at least one review | LEFT JOIN, HAVING |
 | 4 | Students who reviewed a course they did not complete | Multi-table JOIN, Date comparison |
-| 5 | Students who completed all courses by a given instructor | Relational Division, `COUNT` |
-| 6 | Students enrolled in at least 2 courses by the same instructor | `GROUP BY`, `HAVING` |
-| 7 | Students who have reviewed every course they enrolled in | `LEFT JOIN`, Universal Quantification |
+| 5 | Students who completed all courses by a given instructor | Relational Division |
+| 6 | Students enrolled in at least 2 courses by the same instructor | GROUP BY, HAVING |
+| 7 | Students who have reviewed every course they enrolled in | LEFT JOIN, Universal Quantification |
 
 ## Usage
 
@@ -103,33 +99,32 @@ The solution includes seven analytical queries defined in `solution.sql`:
 
 ### Setup
 
-1.  Create a new database:
-    ```bash
-    createdb lms_database
-    ```
+```bash
+# Create database
+createdb lms_database
 
-2.  Execute the schema and queries:
-    ```bash
-    psql -U your_username -d lms_database -f solution.sql
-    ```
+# Run schema (creates tables)
+psql -U your_username -d lms_database -f schema.sql
 
-3.  Verify tables:
-    ```sql
-    \dt
-    ```
+# Run data (inserts sample records)
+psql -U your_username -d lms_database -f data.sql
+
+# Run queries (executes analytical queries)
+psql -U your_username -d lms_database -f queries.sql
+```
 
 ## File Structure
 
 ```text
 Assignment-03/
-├── README.md           # Documentation
-└── solution.sql        # DDL schema and DML queries
+├── README.md       # Documentation
+├── schema.sql      # DDL - Table definitions and constraints
+├── data.sql        # DML - Sample data insertion
+└── queries.sql     # DQL - Seven analytical queries
 ```
 
 ## Technical Highlights
 
-- **PostgreSQL Specifics:** Utilizes regular expression operators (`~`) for strict `course_id` validation.
-- **Data Integrity:** Comprehensive use of `CHECK` constraints to prevent invalid data entry.
-- **Complex Logic:** Implements relational division patterns to handle "all/every" query requirements.
-```
-
+- PostgreSQL regex operators (`~`) for `course_id` validation
+- CHECK constraints for data validity at database level
+- Relational division patterns for "all/every" query requirements
