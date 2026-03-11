@@ -1,4 +1,3 @@
-````markdown
 # Assignment 02 — SQL Schema Design and Query Practice
 
 ## Overview
@@ -190,6 +189,3 @@ Assignment-02
 
 This assignment provides practical experience in designing relational schemas, managing data, and writing SQL queries to retrieve and analyze information from structured databases.
 
-```
-```
-:
