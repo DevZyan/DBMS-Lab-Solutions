@@ -1,8 +1,8 @@
 # **DBMS-Lab-Solutions**
 
-**Course:** Database Management Systems Lab
-**Semester:** Spring 2026
-**College:** IIT Kharagpur
+**Course:** Database Management Systems Lab  
+**Semester:** Spring 2026  
+**College:** IIT Kharagpur  
 
 ## Assignments Overview
 | # | Assignment | Key Implementation | Tech Stack |
