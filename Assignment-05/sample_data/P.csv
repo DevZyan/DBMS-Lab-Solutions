@@ -1,0 +1,11 @@
+dept_id,course_id,student_id,name,gpa
+D1,CS1001,1001,Alice,3.8
+D1,CS1001,1002,Bob,3.5
+D2,CS1002,1003,Carol,3.9
+D3,CS1003,1004,David,3.2
+D4,CS1004,1005,Eve,3.7
+D1,CS1001,1006,Frank,3.6
+D2,CS1002,1007,Grace,3.4
+D5,CS1005,1008,Heidi,3.3
+D3,CS1003,1009,Ivan,3.1
+D6,CS1006,1010,Judy,3.0

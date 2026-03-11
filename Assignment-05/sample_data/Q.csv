@@ -1,0 +1,11 @@
+dept_id,course_id,instructor,credits,location,budget
+D1,CS1001,Dr. Chen,3,New York,100000
+D2,CS1002,Dr. Miller,4,Boston,150000
+D3,CS1003,Dr. Wilson,3,Chicago,120000
+D5,CS1005,Dr. Davis,3,Miami,110000
+D1,CS1001,Dr. Chen,3,New York,100000
+D7,CS1007,Dr. Lee,4,Seattle,130000
+D2,CS1002,Dr. Miller,4,Boston,150000
+D8,CS1008,Dr. Kim,3,Denver,140000
+D3,CS1003,Dr. Wilson,3,Chicago,120000
+D9,CS1009,Dr. Park,4,Austin,160000
