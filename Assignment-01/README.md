@@ -72,7 +72,7 @@ This allows the index to be reused without rebuilding it every time.
 Assignment-01
 │
 ├── btree_index.py   # B-Tree implementation and search program
-├── sample.csv             # Example dataset (optional)
+├── sample.csv             # Example dataset
 └── README.md
 ```
 
