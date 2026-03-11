@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/language-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/database-PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![Course](https://img.shields.io/badge/course-DBMS%20Lab-orange?style=flat-square)
-![Status](https://img.shields.io/badge/status-Completed-success?style=flat-square)
+![Status](https://img.shields.io/badge/Status-OnGoing-yellow?style=flat-square)
 
 **Course:** Database Management Systems Lab  
 **Institution:** IIT Kharagpur  
