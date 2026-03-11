@@ -1,0 +1,8 @@
+student_id,name,dept_id,course_id,gpa
+1000000001,Alice Johnson,D1,CS1001,3.8
+1000000002,Bob Smith,D2,CS1002,3.5
+1000000003,Carol Williams,D1,CS1001,3.9
+1000000004,David Brown,D3,CS1003,3.2
+1000000005,Eva Martinez,D2,CS1002,3.7
+1000000006,Frank Lee,D1,CS1001,3.6
+1000000007,Grace Kim,D4,CS1004,3.4

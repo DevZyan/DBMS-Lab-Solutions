@@ -1,0 +1,8 @@
+dept_id,course_id,location,credits,budget
+D1,CS1001,New York,3,100000
+D2,CS1002,Boston,4,150000
+D3,CS1003,Chicago,3,120000
+D1,CS1001,New York,3,100000
+D4,CS1004,Seattle,4,130000
+D2,CS1002,Boston,4,150000
+D5,CS1005,Miami,3,110000
